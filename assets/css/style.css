@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+:root {
+  /*COLORES*/
+
+  --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+  --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+  --Grayish-Blue: hsl(212, 23%, 69%);
+  --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Manrope";
+}
+
+body {
+  background-color: var(--Light-Grayish-Blue);
+  width: 100%;
+  max-width: 1150px;
+  margin: 4rem auto;
+}
+
+.container-articulo {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  justify-content: center;
+}
+
+.container-info {
+  padding: 30px 40px;
+  background-color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 45%;
+}
+.container-info .title {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-size: 1.4rem;
+}
+.container-info .parrafo {
+  color: var(--Desaturated-Dark-Blue);
+  margin-top: 1rem;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.perfil {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.7rem;
+}
+
+.persona-perfil {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.persona-perfil .info-perfil .nombre {
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 700;
+}
+
+.persona-perfil .info-perfil .año {
+  color: var(--Desaturated-Dark-Blue);
+  margin-top: 0.2rem;
+  font-size: 14px;
+  opacity: 90%;
+}
+
+.share-iconos {
+  position: relative;
+}
+
+.btn {
+  border: none;
+  background-color: var(--Light-Grayish-Blue);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn:hover {
+  background-color: var(--Grayish-Blue);
+}
+
+.container-links {
+  background-color: var(--Very-Dark-Grayish-Blue);
+  position: absolute;
+  right: -86px;
+  top: -75px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5em;
+  width: 210px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.container-links::after {
+  content: "";
+  position: absolute;
+  left: 44%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid var(--Very-Dark-Grayish-Blue);
+}
+
+.iconos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.iconos .share {
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.iconos a {
+  color: white;
+  font-size: 1.3rem;
+  transition: all 0.4s;
+}
+
+.iconos a:hover {
+  color: var(--Grayish-Blue);
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.img-flor {
+  max-width: 32%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.img-avatar {
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media (max-width: 800px) {
+  body {
+    padding: 2rem;
+  }
+  .container-articulo {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .container-info {
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    padding: 1.4rem 1.9rem;
+  }
+  .container-info .title {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  .container-info .parrafo {
+    width: 18.1rem;
+    line-height: 23px;
+  }
+
+  .btn {
+    top: 20%;
+    right: 0%;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .container-links {
+    position: absolute;
+    bottom: -20px;
+    right: -30px;
+    top: -8px;
+    width: 355px;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+  }
+
+  .container-links::after {
+    border: 0;
+  }
+
+  .iconos {
+    justify-content: start;
+    gap: 1.5rem;
+  }
+
+  .iconos .share {
+    font-size: 13px;
+  }
+
+  .iconos a {
+    font-size: 1.5rem;
+  }
+
+  .img-flor {
+    object-fit: cover;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 10px;
+    max-width: 100%;
+    max-height: 250px;
+  }
+}
